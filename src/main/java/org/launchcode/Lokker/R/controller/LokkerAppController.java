@@ -1,7 +1,10 @@
 package org.launchcode.Lokker.R.controller;
 
+import org.launchcode.Lokker.R.models.Cities;
+import org.launchcode.Lokker.R.models.Gym;
 import org.launchcode.Lokker.R.models.User;
-import org.launchcode.Lokker.R.models.data.LokkersDao;
+import org.launchcode.Lokker.R.models.data.CitiesDao;
+import org.launchcode.Lokker.R.models.data.GymDao;
 import org.launchcode.Lokker.R.models.data.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +13,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 //@SessionAttributes("user")
@@ -19,7 +23,10 @@ public class LokkerAppController {
     private UserDao userDao;
 
     @Autowired
-    private LokkersDao lokkersDao;
+    private CitiesDao citiesDao;
+
+    @Autowired
+    private GymDao gymsDao;
 
     @RequestMapping(value = "")
     public String index(Model model) {return "Login";}
@@ -77,6 +84,19 @@ public class LokkerAppController {
         model.addAttribute("title", "home");
         return "home";
     }
+
+    @RequestMapping(value = "location", method = RequestMethod.GET)
+    public String location(Model model, @RequestParam Integer cityid)
+    {
+        //do query and get locations with cityid equals
+
+        Cities mycity = citiesDao.findById(cityid).get();
+        List<Gym> locations =mycity.getGyms();
+        model.addAttribute("locations", locations);
+        model.addAttribute("title", "Gyms Locations in City: " + mycity.getName());
+        return "location";
+    }
+
 
 
 }

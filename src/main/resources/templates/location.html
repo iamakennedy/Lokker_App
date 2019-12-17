@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>${title}</title>
+</head>
+<body>
+
+<h1 th:text="${title}">Default City</h1>
+
+<ul>
+    <li th:each="loc : ${locations}" th:text="${locations.name}"></li>
+</ul>
+
+<p th:unless="${locations.size()}"><i>No locations yet</i></p>
+
+
+</body>
+</html>

@@ -10,6 +10,6 @@ import javax.transaction.Transactional;
 @Repository
 @Transactional
 public interface CitiesDao extends CrudRepository <Cities, Integer> {
-    Cities findByID (int cityID);
+    //Cities findById (Integer id);
 
 }

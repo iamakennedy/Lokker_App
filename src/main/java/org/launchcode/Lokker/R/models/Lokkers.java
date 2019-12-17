@@ -11,15 +11,18 @@ public class Lokkers {
     @GeneratedValue
     private int id;
 
-    @GeneratedValue
-    private int lokkerNumber;
 
-    @ManyToOne
-    private User user;
+    private String lokkerName;
+
+    public Lokkers() {}
+
+
+  //  @ManyToOne
+  //  private User user;
 
     //please add
     //ym class for functionality below
-    @ManyToOne
-    private Gym gym;
+ //   @ManyToOne
+   // private Gym gym;
 
 }

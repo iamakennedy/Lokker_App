@@ -1,14 +1,14 @@
 package org.launchcode.Lokker.R.models.data;
 
 import org.launchcode.Lokker.R.models.Gym;
-import org.launchcode.Lokker.R.models.Lokkers;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+        import org.launchcode.Lokker.R.models.Lokkers;
+        import org.springframework.data.repository.CrudRepository;
+        import org.springframework.stereotype.Repository;
 
-import javax.transaction.Transactional;
+        import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public interface GymDao extends CrudRepository<Gym, String> {
-    Gym findByGym (String Gym);
+public interface GymDao extends CrudRepository<Gym, Integer> {
+   // Gym findByGym (String name);
 }

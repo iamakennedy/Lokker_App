@@ -9,7 +9,7 @@
 <h1 th:text="${title}">Default City</h1>
 
 <ul>
-    <li th:each="loc : ${locations}" th:text="${locations.name}"></li>
+    <li th:each="loc : ${locations}" th:text="${loc.name}"></li>
 </ul>
 
 <p th:unless="${locations.size()}"><i>No locations yet</i></p>

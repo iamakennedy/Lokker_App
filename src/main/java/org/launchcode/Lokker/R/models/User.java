@@ -13,10 +13,6 @@ public class User {
     @GeneratedValue
     private int id;
 
-    @NotNull
-    @Size(min= 5, max= 15)
-    private String username;
-
     @Email(message = "Invalid email address")
     private String email;
 
@@ -27,24 +23,23 @@ public class User {
     @NotNull(message = "Passwords do not match")
     private String verifyPassword;
 
-    public User(String username, String email, String password) {
-        this.username = username;
+    //////Please see below three lines for database integration/7:18 app working
+
+    //@OneToMany
+    //@JoinColumn (name = "user_id")
+    //private List <Lokkers> lokkers = new Arraylist<>();
+
+    ////////////////////////////////////////////////////////////
+    public User(String email, String password) {
         this.email = email;
         this.password = password;
-       // this.id = getId();
+        this.id = getId();
     }
 
     public User() {}
 
     public int getId() {
         return id;
-    }
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
     }
 
     public String getEmail() {

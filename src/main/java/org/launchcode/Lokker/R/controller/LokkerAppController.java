@@ -27,14 +27,12 @@ public class LokkerAppController {
     {
 
     }
-
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(Model model) {
         model.addAttribute(new User());
         model.addAttribute("title", "Register");
         return "register";
     }
-
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String add(Model model, @ModelAttribute @Valid User user,
                       Errors errors) {
@@ -42,7 +40,6 @@ public class LokkerAppController {
         model.addAttribute(user);
 
         if (!errors.hasErrors()) {
-
             userDao.save(user);
             return "home";
         }
@@ -51,17 +48,15 @@ public class LokkerAppController {
 
     }
 
-
     @RequestMapping(value = "login", method = RequestMethod.GET)
     public String login(Model model) {
         model.addAttribute("title", "login");
         return "login";
     }
-
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String login(Model model, @RequestParam String username, @RequestParam String password)
+    public String login(Model model, @RequestParam String email, @RequestParam String password)
     {
-        User myFoundUser = userDao.findByUsername(username);
+        User myFoundUser = userDao.findByEmail(email);
         if (password.equals(myFoundUser.getPassword())){
         // redirect to welcome page
         model.addAttribute("title", "login");
@@ -72,10 +67,9 @@ public class LokkerAppController {
 
              model.addAttribute("title", "login");
         return "login";
-        //add an attribute with an error for insntance in which there's an invalid login
+        //add an attribute with an error for instance in which there's an invalid login
         }
     }
-
 
    @RequestMapping(value = "home", method = RequestMethod.GET)
         public String home(Model model)
@@ -87,3 +81,4 @@ public class LokkerAppController {
 
 }
 /*TODO Create more controllers @RequestMapping*/
+//

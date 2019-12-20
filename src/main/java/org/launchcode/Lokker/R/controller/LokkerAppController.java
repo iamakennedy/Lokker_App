@@ -14,6 +14,9 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -109,6 +112,13 @@ public class LokkerAppController {
     public String gymconfirmation(Model model, @RequestParam Integer id) {
         Gym mylocker = gymDao.findById(id).get();
         mylocker.setBooked(Boolean.TRUE);
+
+        Date date = new Date();
+        String strDateFormat = "MM/dd/yyyy";
+        DateFormat dateFormat = new SimpleDateFormat(strDateFormat);
+        String formattedDate= dateFormat.format(date);
+
+        mylocker.setDatebooked(formattedDate);
         gymDao.save(mylocker);
 
         model.addAttribute("title", "Gym Lokker Confirmation");

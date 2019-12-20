@@ -17,6 +17,7 @@
         <th>Gym Name</th>
         <th>Address</th>
         <th>Availability</th>
+        <th>Date Booked</th>
     </tr>
     <tr th:each="loc : ${locations}">
         <td th:text="${loc.name}"></td>
@@ -25,6 +26,7 @@
         <!-- check if not book, otherwise show text BOOKED -->
         <td th:unless="${loc.booked}"><a th:href="'/gymdetails?id=' + ${loc.id}"><button value = "book" >Book</button></a></td>
         <td th:unless="${!loc.booked}">Reserved</td>
+        <td th:unless="${!loc.booked}" th:text="${loc.datebooked}"></td>
 
 
 <!--       < a href='/gymdetails?id=27'>clickable area</a>

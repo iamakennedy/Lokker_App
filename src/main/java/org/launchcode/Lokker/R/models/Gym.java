@@ -13,22 +13,25 @@ public class Gym {
     private int id;
 
     @NotNull
-    @Size(min=3, max=15)
+    @Size(min = 3, max = 15)
     private String name;
 
     @NotNull
-    @Size(min=3, max=100)
+    @Size(min = 3, max = 100)
     private String address;
 
     @ManyToOne
     private Cities city;
-
     private Boolean booked;
 
-    // @OneToMany
-   // private List<Lokkers> lokkers = new ArrayList<>();
 
-    public Gym() {}
+    private String datebooked;
+
+    // @OneToMany
+    // private List<Lokkers> lokkers = new ArrayList<>();
+
+    public Gym() {
+    }
 
     public Gym(String name, String address) {
         this.name = name;
@@ -72,4 +75,11 @@ public class Gym {
         this.booked = booked;
     }
 
+    public String getDatebooked() {
+        return datebooked;
+    }
+
+    public void setDatebooked(String datebooked) {
+        this.datebooked = datebooked;
+    }
 }

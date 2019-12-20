@@ -23,6 +23,8 @@ public class Gym {
     @ManyToOne
     private Cities city;
 
+    private Boolean booked;
+
     // @OneToMany
    // private List<Lokkers> lokkers = new ArrayList<>();
 
@@ -31,8 +33,12 @@ public class Gym {
     public Gym(String name, String address) {
         this.name = name;
         this.address = address;
+        this.booked = false;
     }
 
+    public int getId() {
+        return id;
+    }
 
     public String getName() {
         return name;
@@ -58,6 +64,12 @@ public class Gym {
         this.city = city;
     }
 
+    public Boolean getBooked() {
+        return booked;
+    }
 
+    public void setBooked(Boolean booked) {
+        this.booked = booked;
+    }
 
 }

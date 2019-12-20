@@ -3,16 +3,39 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>${title}</title>
+
 </head>
 <body>
-
+<nav th:replace="fragments :: navigation"></nav>
 <h1 th:text="${title}">Default City</h1>
-
-<ul>
-    <li th:each="loc : ${locations}" th:text="${loc.name}"></li>
-</ul>
-
 <p th:unless="${locations.size()}"><i>No locations yet</i></p>
+<!--<ul>
+    <li th:each="loc : ${locations}" th:text="${loc.name}"></li>
+</ul>-->
+<table class="table">
+    <tr>
+        <th>Gym Name</th>
+        <th>Address</th>
+        <th>Availability</th>
+    </tr>
+    <tr th:each="loc : ${locations}">
+        <td th:text="${loc.name}"></td>
+        <td th:text="${loc.address}"></td>
+
+        <!-- check if not book, otherwise show text BOOKED -->
+        <td th:unless="${loc.booked}"><a th:href="'/gymdetails?id=' + ${loc.id}"><button value = "book" >Book</button></a></td>
+        <td th:unless="${!loc.booked}">Reserved</td>
+
+
+<!--       < a href='/gymdetails?id=27'>clickable area</a>
+
+ <ul><li th:each="topic : ${topics}">-->
+<!--           <a th:href="'post/post_view?id=' + ${topic.id}">
+                    <img  type = "image" alt="Logo"
+                          th:src="${topic.imageUrl}" /></a>
+-->
+    </tr>
+</table>
 
 
 </body>

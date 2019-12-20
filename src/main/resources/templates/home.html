@@ -1,17 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="ISO-8859-1">
-    <title>WebEncyclop</title>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<!--xmlns:th="http://www.w3.org/1999/xhtml"-->
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<h1 th:text="${title}">Lokker</h1>
+
 </head>
-<body>
-Hello
 
-<a href="/location?cityid=1"><button value = "City 1">City1</button></a>
+<body class="container">
+<nav th:replace="fragments :: navigation"></nav>
 
-<a href="/location?cityid=2">City 2</a>
+<h1 > Lokker Beta Cities</h1>
+<br>
+<br>
 
-<a href="/location?cityid=3">City 3</a>
+<a href="/location?cityid=1"><button value = "City 1">Tampa</button></a>
+
+<a href="/location?cityid=2"><button value = "City 2">St.Petersburg</button></a>
+
+<a href="/location?cityid=3"><button value = "City 3">Sarasota</button></a>
+
+
 
 </body>
+<footer th:replace="fragments :: footer"></footer>
 </html>

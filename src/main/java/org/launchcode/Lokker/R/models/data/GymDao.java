@@ -10,5 +10,6 @@ import org.launchcode.Lokker.R.models.Gym;
 @Repository
 @Transactional
 public interface GymDao extends CrudRepository<Gym, Integer> {
-   // Gym findByGym (String name);
+    //Gym findbyId(int locId);
+    // Gym findByGym (String name);
 }

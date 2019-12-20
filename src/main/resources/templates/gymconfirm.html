@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<!--xmlns:th="http://www.w3.org/1999/xhtml"-->
+<head th:replace="fragments :: head"></head>
+
+<meta charset="UTF-8">
+<title>Lokker Confirmation View </title>
+</head>
+
+<body class="container">
+<nav th:replace="fragments :: navigation"></nav>
+<h1>Gym Lokker Details</h1>
+
+Name: <ul th:text="${lokker.name}"></ul>
+Address:<ul th:text="${lokker.address}"></ul>
+<br/>
+
+BOOKED
+
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body{
+    color: #ffffff;
+    font-family: Courier, sans-serif, Verdana, Arial;
+    text-align: left;
+    background-color: yellow;
+}
+
+body {
+    background-color: yellow;
+    background-image: url("../img/tracklines.jpg");
+    background-repeat: no-repeat;
+    background-position: right top;
+    }
+
+/* Style the header */
+.header {
+  grid-area: header;
+  background-color: yellow;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: black;
+}
+
+/*for homepage photographs with clickable buttons*/
+.container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  font-family: Courier, sans-serif, Verdana, Arial;
+
+}
+
+.container img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: auto;
+  background-color:white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); margin-bottom: 25px;
+  }
+
+
+.container .btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #000000;
+  color: white;
+  font-family: Courier, sans-serif, Verdana, Arial;
+  font-size: 16px;
+  padding: 16px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.container .btn:hover {
+  background-color: white;
+  color: black;
+  font-family: Courier, sans-serif, Verdana, Arial;
+}
+/*for side by side photos*/
+
+/* Create three equal columns that sits next to each other */
+
+/*testing login css*/
+
+#form{
+font-family: Courier, sans-serif, Verdana, Arial;
+}
+
+}
+
+.multi-bg-example {
+  width: 100%;
+  height: 400px;
+  background-image:  url("../img/tracklines.jpg"),
+      url("../img/lockers.jpg"),
+  background-repeat: no-repeat,
+      no-repeat,
+      no-repeat;
+  background-position: bottom right,
+      left,
+      right;
+}
+</style>
+</head>
+<body>

@@ -1,37 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Registration Form</title>
-    <!-- link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" /-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Register for Lokker</title>
+<!--    &lt;!&ndash; link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" /&ndash;&gt;-->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" media="screen" th:href="@{/css/login.css}"/>
+    <link rel="stylesheet"  th:href="@{/css/login.css}"/>
 </head>
-<body style="background-color: #ededed;">
-<div style="background-color: #337ab7; height: 50px;"></div>
-<div class="container-fluid" style="margin-top: 30px;">
 
-    <div class="row col-lg-4 col-lg-offset-4" style="margin-top: 40px; background-color: #fff; padding: 20px; border: solid 1px #ddd;">
+<!--<body style="background-color: #ededed;">-->
+<!--<div style="background-color: #337ab7; height: 50px;"></div>-->
+<!--<div class="container-fluid" style="margin-top: 30px;">-->
 
+<!--    <div class="row col-lg-4 col-lg-offset-4" style="margin-top: 40px; background-color: #fff; padding: 20px; border: solid 1px #ddd;">-->
+<div class="container">
+<h1><span style="background-color: #000000">Please Register</h1>
         <form method="post" th:object="${user}" style="width:600px;">
             <div class="form-group">
-                <label th:for="email">Email</label>
-                <input class="form-control" th:field="*{email}" type="email" />
+                <label th:for="email"></label>
+                <input class="form-control" th:field="*{email}" type="email" th:placeholder="Email"/>
                 <div class="error" th:errors="*{email}"></div>
             </div>
+        </br>
             <div class="form-group">
-                <label th:for="password">Password</label>
-                <input class="form-control" th:field="*{password}" type="password" />
+                <label th:for="password"></label>
+                <input class="form-control" th:field="*{password}" type="password" th:placeholder="Password"/>
                 <div class="error" th:errors="*{password}"></div>
             </div>
+            </br>
             <div class="form-group">
-                <label th:for="verifyPassword">Verify</label>
-                <input class="form-control" th:field="*{verifyPassword}" type="password" />
+                <label th:for="verifyPassword"></label>
+                <input class="form-control" th:field="*{verifyPassword}" type="password" th:placeholder="Verify" />
                 <div class="error" th:errors="*{verifyPassword}"></div>
             </div>
+            </br>
 
-            <input type="submit" value="Register" />
+            <button class="button" name="Register" type="submit" value="Register" th:text="Login"></button>
         </form>
+</div>
 
     </div>
 </div>

@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <!--xmlns:th="http://www.w3.org/1999/xhtml"-->
+<link rel="stylesheet" th:href="@{/css/login.css}">
 <head th:replace="fragments :: head"></head>
+<link rel="stylesheet" media="screen" th:href="@{/css/login.css}"/>
+
+<div class="multi-bg-example" th:href="@{/css/login.css}"></div>
+
+
 <body class="container">
 
 <h1 th:text="${title}">Lokker</h1>
@@ -11,17 +17,50 @@
 <body class="container">
 <nav th:replace="fragments :: navigation"></nav>
 
-<h1 > Lokker Beta Cities</h1>
+<br>
+<br>
+    <h1>Lokker: Innovative Apparel for the Modern Athlete</h1>
+<!--    <div class="container"><img th:src="@{/img/blacktitle.png}" alt="lokker description" style="width:100%">-->
+
+<h2>Tired of carrying (and subsequently, forgetting) a gym bag?</h2>
 <br>
 <br>
 
-<a href="/location?cityid=1"><button value = "City 1">Tampa</button></a>
+<br>
+<br>
+<h2><span style="background-color: #000000">Let's go! There's an innovative solution to your hurdles of exercising at your fingertips. Reserve a lokker today!</span></h2>
 
-<a href="/location?cityid=2"><button value = "City 2">St.Petersburg</button></a>
+<br>
+<br>
 
-<a href="/location?cityid=3"><button value = "City 3">Sarasota</button></a>
+<h1> Lokker Beta Cities</h1>
+<p>Coming soon to a community near you! Please select a city below to see lokkeravailability in your area!</p>
+<div class="row">
+    <div class="column">
+<div class="container"><img th:src="@{/img/girlstanding.jpg}" alt="standing girl" style="width:100%"><a href="/location?cityid=1"><button class="btn" value = "City 1">Tampa</button></a></div>
+    </div>
+
+    <div class="column">
+        <div class="container"><img th:src="@{/img/basketballgirl.jpg}" alt="basketball girl" style="width:100%"><a href="/location?cityid=2"><button class="btn" value = "City 2">St.Petersburg</button></a></div>
+    </div>
+    <div class="column">
+        <div class="container"><img th:src="@{/img/handstandgirl.jpg}" alt="handstand girl" style="width:100%"><a href="/location?cityid=3"><button class="btn" value = "City 3">Sarasota</button></a></div>
+    </div>
+
+</div>
 
 
+<!--<div class="middle" style="background-color:#000;"><a href="/location?cityid=2"><button value = "City 2">St.Petersburg</button></a></div>-->
+
+<!--<div class="right" style="background-color:#000;"><a href="/location?cityid=3"><button value = "City 3">Sarasota</button></a></div>-->
+
+<!--<a href="/location?cityid=1"><button value = "City 1">Tampa</button></a>-->
+
+<!--<a href="/location?cityid=2"><button value = "City 2">St.Petersburg</button></a>-->
+
+<!--<a href="/location?cityid=3"><button value = "City 3">Sarasota</button></a>-->
+
+</div>
 
 </body>
 <footer th:replace="fragments :: footer"></footer>
